@@ -1787,6 +1787,7 @@ namespace NDream.AirConsole {
         private void OnLaunchApp(JObject msg) {
             Debug.Log("onLaunchApp");
 			string gameId = (string)msg ["game_id"];
+			Debug.Log(gameId);
 			string gameVersion = (string)msg ["game_version"];
 
 			if (gameId != Application.identifier || gameVersion != AirConsole.instance.androidTvGameVersion) {
