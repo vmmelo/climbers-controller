@@ -24,10 +24,11 @@ public class GameLogic : MonoBehaviour
             Camera.main.backgroundColor = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f),Random.Range(0f, 1f));
             
         }
-        if(data["force"] != null && data["angle"] != null){
+        if(data["force"] != null && data["x"] != null && data["y"] != null){
             Debug.Log(data["force"]);
-            Debug.Log(data["angle"]);
-            // Pular(10, 2, float.Parse(data["force"]));
+            Debug.Log("x: " + data["x"]);
+            Debug.Log("y: " + data["y"]);
+            Pular(x, y, float.Parse(data["force"]));
         }
     }
 
