@@ -40,12 +40,8 @@
       }
     }
 
-  App.prototype.sendMessageToScreen = function(msg, angle, force) {
-		console.log("button press jump");
-    console.log(msg);
-    console.log(force);
-    console.log(angle);
-		this.airconsole.message(AirConsole.SCREEN, {"action": msg, "angle": angle, "force":force })
+  App.prototype.sendMessageToScreen = function(msg) {
+		this.airconsole.message(AirConsole.SCREEN, msg)
 	}
 
 
