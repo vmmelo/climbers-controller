@@ -25,7 +25,17 @@ function stop() {
     if (parouOretorno) {
         clearInterval(id);
         console.log(width);
-        window.app.sendMessageToScreen('interact', angle, width)
+        console.log(angle);
+        var radian = degrees_to_radians(angle)
+        [x, y] = [Math.cos(radian), Math.sin(radian)]
+        window.app.sendMessageToScreen(
+            {
+                "action": 'interact', 
+                "x": x, 
+                "y": y, 
+                "force":width 
+            }
+        );
     } 
 }
 function progresso() {
@@ -40,5 +50,10 @@ function progresso() {
 }
 function paraTudo() {
     clearInterval(id);
+}
+
+function degrees_to_radians(degrees)
+{
+  return degrees * (Math.PI/180);
 }
 
